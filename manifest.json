@@ -3,8 +3,16 @@
     "name": "PassGen",
     "description": "A Password Generator / Manager",
     "version": "0.1",
+    "icons": {
+        "48" : "icons/48.png",
+        "128" : "icons/128.png"
+    },
     "action":{
-        "default_title":"click me hehe"
+        "default_title":"click me hehe",
+        "default_icon" : {
+            "48" : "icons/48.png",
+            "128" : "icons/128.png"
+        }
     },
     "background": {
         "service_worker": "background.js",
