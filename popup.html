@@ -2,44 +2,52 @@
 <html>
   <head>
     <title>Password Generator</title>
-    <link rel="stylesheet" href="popupStyle.css">
+    <link rel="stylesheet" href="popupStyle.css" />
   </head>
   <body>
     <div class="main-div">
       <h1>PassGen</h1>
       <div class="password-length">
         <label for="password-length">Password Length:</label>
-        <input type="number" id="password-length" min="1" max="100" value="12"> 
+        <input
+          type="number"
+          id="password-length"
+          min="1"
+          max="100"
+          value="12"
+        />
       </div>
       <div class="marginTopBottom">
         <div class="col s6">
-            <label>
-                <input type="checkbox" id="lowercase" />
-                <span>Lower Case (a-z)</span>
-            </label>
+          <label>
+            <input type="checkbox" id="lowercase" />
+            <span>Lower Case (a-z)</span>
+          </label>
         </div>
         <div class="col s6">
-            <label>
-                <input type="checkbox" id="uppercase" />
-                <span>Upper Case (A-Z)</span>
-            </label>
+          <label>
+            <input type="checkbox" id="uppercase" />
+            <span>Upper Case (A-Z)</span>
+          </label>
         </div>
         <div class="col s6">
-            <label>
-                <input type="checkbox" id="numberCase" />
-                <span>Number (0-9)</span>
-            </label>
+          <label>
+            <input type="checkbox" id="numberCase" />
+            <span>Number (0-9)</span>
+          </label>
         </div>
         <div class="col s6">
-            <label>
-                <input type="checkbox" id="symbol" />
-                <span>Special Characters</span>
-            </label>
+          <label>
+            <input type="checkbox" id="symbol" />
+            <span>Special Characters</span>
+          </label>
         </div>
-    </div>
+      </div>
       <button id="generate-password">Generate Password</button>
       <p>Your password is:</p>
       <textarea id="password" rows="3" readonly></textarea>
+      <button id="copy-button">Copy to Clipboard</button>
+      <div id="confirmation-message">Password copied to clipboard!</div>
     </div>
     <script src="popupScript.js"></script>
   </body>
