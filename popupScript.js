@@ -1,22 +1,23 @@
-document.addEventListener('DOMContentLoaded', function() {
-    const generatePasswordButton = document.getElementById('generate-password');
-    const passwordLengthInput = document.getElementById('password-length');
-    const passwordTextarea = document.getElementById('password');
+const generatePasswordButton = document.getElementById('generate-password');
+const passwordLengthInput = document.getElementById('password-length');
+const passwordTextarea = document.getElementById('password');
+
+generatePasswordButton.addEventListener('click', () => {
+  const passwordLength = parseInt(passwordLengthInput.value, 10);
   
-    generatePasswordButton.addEventListener('click', function() {
-      const passwordLength = parseInt(passwordLengthInput.value);
-      const password = generatePassword(passwordLength);
-      passwordTextarea.value = password;
-    });
+  if (isNaN(passwordLength)) {
+    passwordTextarea.value = 'Please enter a valid password length.';
+    return;
+  }
   
-    function generatePassword(length) {
-      const charset = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()_+-=[]{};:,.<>?';
-      let password = '';
-      for (let i = 0; i < length; i++) {
-        const randomIndex = Math.floor(Math.random() * charset.length);
-        password += charset[randomIndex];
-      }
-      return password;
-    }
-  });
+  const characters = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()_-+=';
+  let password = '';
+  
+  for (let i = 0; i < passwordLength; i++) {
+    const index = Math.floor(crypto.getRandomValues(new Uint32Array(1))[0] / (0xffffffff + 1) * characters.length);
+    password += characters[index];
+  }
+  
+  passwordTextarea.value = password;
+});
   
