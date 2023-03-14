@@ -58,24 +58,17 @@ generatePasswordButton.addEventListener("click", () => {
 });
 
 // Get the copy button element
-const copyButton = document.getElementById("copy-button");
+const copyButton = document.getElementById("copy-password");
 
 // Add an event listener to the copy button
 copyButton.addEventListener("click", function () {
-  // Get the password element
-  const passwordElement = document.getElementById("password");
-
   // Create a temporary input element
-  const input = document.createElement("input");
-  input.value = passwordElement.innerText;
-  document.body.appendChild(input);
+  const input = document.getElementById("password");
 
   // Select and copy the password to the clipboard
   input.select();
-  document.execCommand("copy");
-
-  // Remove the temporary input element
-  document.body.removeChild(input);
+  navigator.clipboard.writeText(input.value);
+  // document.execCommand("copy");
 
   // Show a confirmation message
   const confirmationMessage = document.getElementById("confirmation-message");
