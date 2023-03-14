@@ -91,3 +91,17 @@ history.addEventListener("click",()=>{
 
 
   
+  
+
+const copyButton = document.getElementById('copy-button');
+const confirmationMessage = document.getElementById('confirmation-message');
+
+copyButton.addEventListener('click', () => {
+  passwordTextarea.select();
+  document.execCommand('copy');
+  confirmationMessage.style.display = 'block';
+  setTimeout(() => {
+    confirmationMessage.style.display = 'none';
+  }, 2000);
+});
+
