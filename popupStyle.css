@@ -13,10 +13,23 @@ html {
 body {
   font-size: 1.6rem;
   line-height: 1.6;
+  min-height: 280px;
+  width: 400px;
 }
 
-.main-div {
-  width: 250px;
+.marginTopBottom {
+  margin: 10px 0px;
+  display: inline-block;
+  width: 100%;
+}
+
+.card {
+  background-color: #161748 !important;
+  display: inline-block;
+}
+
+.input-field {
+  margin-bottom: 0rem;
 }
 
 #copy-button {
