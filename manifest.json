@@ -2,7 +2,7 @@
   "manifest_version": 3,
   "name": "PassGen",
   "description": "A Password Generator / Manager",
-  "version": "0.1",
+  "version": "1.2",
   "icons": {
     "48": "icons/48.png",
     "128": "icons/128.png"
