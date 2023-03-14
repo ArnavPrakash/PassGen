@@ -2,54 +2,19 @@
 <html>
   <head>
     <title>Password Generator</title>
-    <style>
-      body {
-        font-family: Arial, sans-serif;
-        font-size: 14px;
-        padding: 10px;
-      }
-      h1 {
-        font-size: 20px;
-        margin-bottom: 10px;
-      }
-      label {
-        display: block;
-        margin-bottom: 5px;
-      }
-      input[type="number"] {
-        width: 50px;
-        padding: 5px;
-        border-radius: 5px;
-        border: 1px solid #ccc;
-        margin-right: 10px;
-      }
-      button {
-        display: block;
-        margin-top: 10px;
-        padding: 5px 10px;
-        background-color: #4CAF50;
-        color: #fff;
-        border-radius: 5px;
-        border: none;
-        cursor: pointer;
-      }
-      textarea {
-        width: 100%;
-        margin-top: 10px;
-        padding: 5px;
-        border-radius: 5px;
-        border: 1px solid #ccc;
-      }
-    </style>
+    <link rel="stylesheet" href="popup.css">
   </head>
   <body>
-    <h1>Password Generator</h1>
-    <label for="password-length">Password Length:</label>
-    <input type="number" id="password-length" min="1" max="100" value="12">
-    <button id="generate-password">Generate Password</button>
-    <p>Your password is:</p>
-    <textarea id="password" rows="3" readonly></textarea>
-
+    <div class="main-div">
+      <h1>PassGen</h1>
+      <div class="password-length">
+        <label for="password-length">Password Length:</label>
+        <input type="number" id="password-length" min="1" max="100" value="12"> 
+      </div>
+      <button id="generate-password">Generate Password</button>
+      <p>Your password is:</p>
+      <textarea id="password" rows="3" readonly></textarea>
+    </div>
     <script src="popup.js"></script>
   </body>
 </html>
