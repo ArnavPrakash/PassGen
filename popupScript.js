@@ -54,3 +54,30 @@ generatePasswordButton.addEventListener('click', () => {
   passwordTextarea.value = password;
 });
   
+// Get the copy button element
+const copyButton = document.getElementById('copy-button');
+
+// Add an event listener to the copy button
+copyButton.addEventListener('click', function() {
+  // Get the password element
+  const passwordElement = document.getElementById('password');
+
+  // Create a temporary input element
+  const input = document.createElement('input');
+  input.value = passwordElement.innerText;
+  document.body.appendChild(input);
+
+  // Select and copy the password to the clipboard
+  input.select();
+  document.execCommand('copy');
+
+  // Remove the temporary input element
+  document.body.removeChild(input);
+
+  // Show a confirmation message
+  const confirmationMessage = document.getElementById('confirmation-message');
+  confirmationMessage.style.display = 'block';
+  setTimeout(function() {
+    confirmationMessage.style.display = 'none';
+  }, 3000);
+});
